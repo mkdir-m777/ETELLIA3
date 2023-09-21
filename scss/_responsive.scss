@@ -1,0 +1,35 @@
+@mixin responsive($size) {
+    $width: 0;
+
+    @if($size ==llg) {
+        $width: 1400px;
+    }
+
+    @if($size ==lg) {
+        $width: 1200px;
+    }
+
+    @if($size ==md) {
+        $width: 992px;
+    }
+
+    @else if($size ==sm) {
+        $width: 768px;
+    }
+
+    @else if($size ==sms) {
+        $width: 702px;
+    }
+
+    @else if($size ==ssm) {
+        $width: 576px;
+    }
+
+    @else if($size ==sp) {
+        $width: 400px;
+    }
+
+    @media screen and (max-width: $width) {
+        @content;
+    }
+}

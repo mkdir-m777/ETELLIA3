@@ -1,0 +1,229 @@
+@charset "utf-8";
+@use "responsive" as*;
+
+
+// アニメーション
+.logo-rotate {
+    animation-name: logorotate;
+    animation-duration: 7.0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes logorotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(720deg);
+    }
+}
+
+.logo-rotate-revers {
+    animation-name: logorotaterevers;
+    animation-duration: 15.0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes logorotaterevers {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-720deg);
+    }
+}
+
+.btn-jump {
+    animation-name: jumpAnime;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    @include responsive(ssm){
+        animation-name: jumpAnimeaa;
+    }
+}
+
+@keyframes jumpAnime {
+    0% {
+        transform: translateY(0);
+        transform: scaleY(0.5);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+
+    100% {
+        transform: translateY(-0px);
+    }
+}
+
+.btn-jump:hover {
+    opacity: 0.7;
+    animation-play-state: paused
+}
+
+
+.fadeIn {
+    animation-name: fadeInAnime;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInAnime {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeUp {
+    animation-name: fadeUpAnime;
+    animation-duration: 1.0s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*左から */
+.fadeLeft {
+    animation-name: fadeLeftAnime;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeLeftAnime {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 右から */
+
+.fadeRight {
+    animation-name: fadeRightAnime;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeRightAnime {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 　Y 軸（横へ） */
+.rotateY {
+    animation-name: rotateYAnime;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotateYAnime {
+    from {
+        transform: rotateY(0);
+    }
+
+    to {
+        transform: rotateY(-360deg);
+    }
+}
+
+
+
+/* 上から */
+
+.fadeDown {
+    animation-name: fadeDownAnime;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeDownAnime {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*遅延アニメーション  */
+.delay-time02 {
+    animation-delay: 0.2s;
+}
+
+.delay-time04 {
+    animation-delay: 0.4s;
+}
+
+.delay-time06 {
+    animation-delay: 0.6s;
+}
+
+.delay-time08 {
+    animation-delay: 0.8s;
+}
+
+/* 拡大 */
+.zoomIn {
+    animation-name: zoomInAnime;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes zoomInAnime {
+    from {
+        transform: scale(0.6);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+/* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+.fadeInTrigger,
+.fadeLeftTrigger,
+.fadeRightTrigger,
+.fadeDownTrigger,
+.fadeUpTrigger {
+    opacity: 0;
+}
